@@ -1,0 +1,42 @@
+version: '3'
+ 
+services:
+  apachephp:
+    build: ./apachephp
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./www:/var/www/html/
+    links:
+      - db:mysql
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: pass
+    ports:
+      - "3306:3306"
+ 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+    - db
+    external_links:
+    - db:mysql
+    ports:
+    - "9191:80"
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: pass
+      MYSQL_ROOT_PASSWORD: pass
+      PMA_HOST: db
+
+  mailhog:
+          image: mailhog/mailhog:v1.0.0
+          ports:
+              - "1025:1025"
+              - "8025:8025"
