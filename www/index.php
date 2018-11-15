@@ -1,50 +1,16 @@
 <?php
 
-require('models/Usermanager.php');
+spl_autoload_register(function ($class){
+    if (file_exists('./classes/' . $class . '.php'))
+        include './classes/' . $class . '.php';
+    else if (file_exists('./controllers/' . $class . '.php'))
+        include './controllers/' . $class . '.php'; 
+});
+
+require_once('routes.php');
+
+//echo $_GET['url'];
 
 
 
-$userManager = new Usermanager();
-$result = $userManager->add_user('bip', 'pass', 'mail');
-echo ($result);
-$result = $userManager->remove_user('b0p');
-echo ($result);
-
-
-/*
-try
-{
-    
-}
-catch(Exception $e)
-{
-    die('Erreur : '.$e->getMessage());
-}
-$req = $bdd->query('SELECT id, name, age FROM user_test ORDER BY id');
-*/
 ?>
-
-<html>
-    <head>
-        <title>Hello World</title>
-    </head>
-
-    <body>
-        <?php
-        /*
-        while ($donnees = $req->fetch())
-        {
-        ?>
-            <h3>
-                <?php
-                    echo $donnees['name'];
-                ?>
-            </h3>
-        </div>
-        <?php
-        }
-        echo "Hello, World!";
-        */
-        ?>
-    </body>
-</html>
