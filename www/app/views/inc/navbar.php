@@ -1,25 +1,40 @@
-<nav class="navbar navbar-expand-xl navbar-dark bg-dark mb-3">
-      <a class="navbar-brand" href="<?php echo URLROOT;?>"><?php echo SITENAME; ?>></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="<?php echo URLROOT; ?>">
+      <h1><?php echo SITENAME; ?></h1>
+    </a>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="<?php echo URLROOT;?>">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo URLROOT;?>">About</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="<?php echo URLROOT;?>/users/register">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo URLROOT;?>/users/login">login</a>
-          </li>
-        </ul>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        Home
+      </a>
+
+      <a class="navbar-item">
+        
+      </a>
+
+    
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
+        </div>
       </div>
-    </nav>
+    </div>
+  </div>
+</nav>
