@@ -1,0 +1,12 @@
+CREATE TABLE `users` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `name` text NOT NULL,
+ `email` text NOT NULL,
+ `password` text NOT NULL,
+ `confirmation_hash` text NOT NULL,
+ `confirmed` int(11) NOT NULL DEFAULT '0',
+ `password_hash` text NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+

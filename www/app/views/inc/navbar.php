@@ -24,6 +24,9 @@
     <?php if(isset($_SESSION['user_id'])) : ?>
     <div class="navbar-item">
         <div class="buttons">
+          <a class="button" href="<?php echo URLROOT?>/users/profile">
+            <strong>User profil</strong>
+          </a>
           <a class="button is-primary" href="<?php echo URLROOT?>/users/logout">
             <strong>logout</strong>
           </a>

@@ -1,6 +1,7 @@
 body{ background-color: whitesmoke;}
 
-.navbar-padding{
+.c-padding{
+  padding: 150px;
   padding-bottom: 10%;
 }
 

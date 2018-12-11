@@ -6,11 +6,17 @@
     <div class="column is-half">
         <section class="section">
             <div class="container">
-                <h1 class="title">Create An Account</h1>
+                <h1 class="title">Log in</h1>
                 <h2>Please fill out in your credentials to log in.</h2>
             </div>
         </section>
         <?php flash('register_success'); ?>
+        <?php if(!empty($data['mail_confirmation_err']))
+            echo '<div class="notification is-warning" id="msg-flash">'. $data['mail_confirmation_err'] .'</div>';
+        ?>
+        <?php if(!empty($data['mail_confirmation_message']))
+            echo '<div class="notification is-success" id="msg-flash">'. $data['mail_confirmation_message'] .'</div>';
+        ?>
         <form action="<?php echo URLROOT; ?>/users/login" class="card-content" method="post">
                 <div class="field">
                     <div class="control">
