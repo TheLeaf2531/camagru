@@ -30,13 +30,11 @@ class Users extends Controller
                 'confirm_password_err' => ''
             ];
 
-
             if (empty($data['email']))
                 $data['email_err'] = 'Please enter an email adress';
             else
                 if ($this->userModel->findUserByEmail($data['email']))
                     $data['email_err'] = 'Email is already taken';
-
 
 
             if (empty($data['name']))
